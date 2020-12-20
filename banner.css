@@ -1,0 +1,15 @@
+#header {
+    width: 1260px;
+    height: 90px;
+    margin: 0 auto;
+}
+
+.many {
+    font-size: 25px;
+    padding : 8px;
+    boarder : 12px dashed #ff5722;
+}
+.small {
+    fon-size: 15px;
+    boarder : 4px dashed #ff5722;
+}
