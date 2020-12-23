@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/join" method="post">
+        <div>이름 : <input type="test" name="name" value="홍길동"></div>
+        <div>주소 : <input type="test" name="addr"></div>
+        <div>이메일 : <input type="email" name="email"></div>
+        <div>색상 : <input type="color" name="clr"></div>
+        <div>나이 : <input type="number" name="age"></div>
+        <div>생년월일 : <input type="date" name="birthday"></div>
+        <div>시간  : <input type="time" name="tetatime"></div>
+        <div><input type="button" value="걍버튼"></div>
+        <div><button>걍버튼2</button></div>
+        <div>
+            취미 : 
+            <label>축구<input type="checkbox" name="hobby" value="1"></label>
+            <label>농구<input type="checkbox" name="hobby" value="2"></label>
+            <label>수영<input type="checkbox" name="hobby" value="3"></label>
+        </div>
+        <div>
+            성별 : 
+            <label>여자<input type="radio" name="gender" value="female" checked></label>
+            <label>남자<input type="radio" name="gender" value="male"></label>
+        </div>
+        <div>
+            지역 :
+            <select name="location">
+                <option value="1">서울</option>
+                <option value="2">대전</option>
+                <option value="3" selected>대구</option>
+                <option value="4">부산</option>
+            </select>
+        </div>
+        <div>
+            범위 : <input id="a" type="range" name="range">
+        </div>
+        <input type="submit" value="전송">
+        <input type="reset" value="리셋">
+    </form>
+</body>
+</html>
