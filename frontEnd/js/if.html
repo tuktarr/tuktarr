@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function chk_1() {
+            return 1; //0빼고 숫자형은 전부 다 true 값을 가진다.
+        }
+
+        if(chk_1()){ //if (true)일 때 실행
+           console.log('값이 찍히나요?');
+        }
+
+        function chk_2() {
+            return 'aaa'; //문자열이 ''만 false , 하나라도 있으면 true
+        }
+
+        if(chk_2()) {
+            console.log('이것도요?');
+        }
+
+        if(undefined) { //undefined 와 null 도 false
+            console.log('!!!!!!!!');
+        }
+
+        var obj = {};
+        if(obj) { //객체를 만들기만 하면 true
+            console.log('obj!!!!');
+        }
+
+        var arr = [];
+        if(arr) { //배열안에 아무 값도 없어도 true
+            console.log('true');
+        }
+
+    </script>
+</body>
+</html>

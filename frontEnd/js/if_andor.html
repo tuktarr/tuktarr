@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function ck_1() {
+            console.log('--ck_1() called --')
+            return 1;
+        }
+        function ck_2() {
+            console.log('--ck_2() called --')
+            return '';
+        }
+        function ck_3() {
+            console.log('--ck_3() called --')
+            return 1;
+        }
+        // ck_1() = true;
+        // ck_2() = false;s
+        // ck_3() = false;
+        if(ck_1() && ck_3() || ck_2()) {
+
+        }
+    </script>
+</body>
+</html>

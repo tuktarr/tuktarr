@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = { //literal 방식으로 객체를 생성한다.
+            "name": "홍길동", //속성에 ""를 준다 , 값에도 ""를 줌 -> Json형태
+            "age": 12,
+            "marry" : false,
+            // "ok" : undefined, : 아예 나오지 않음
+            "no" : null,
+            showMe: function(){
+                console.log('My name is ' + this.name + ', age is ' + this.age);
+            }
+        };
+        JSON.stringify(obj);
+        //파라미터로 보낼 수 있냐 없냐에 따라서 1급 객체로 부를 수 있다.
+        obj.name = 'dddd';
+        console.log(obj.name + ', ' + obj.age);
+        obj.showMe(); //1급 객체 -> 메소드를 넣을 수 있다.
+        //제이슨 (JSON) : JavaScript Object Notation => 객체 표기법을 제한하여 만든 텍스트 기반의 데이터 교환 표준
+    </script>
+</body>
+</html>
