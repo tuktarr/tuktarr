@@ -7,18 +7,29 @@
 </head>
 <body>
     <script>
-        function Human(name,age) {
+        function Human(name,age) { //생성자 함수
             this.name = name;
             this.age = age;
 
-            this.showMe = function() {
-                console.log('My name is ' + this.name + ', age is' + this.age);
-            }
+        }
+        Human.prototype.hello = function() {
+            console.log('나는' + this.name + '이야, 반가워~');
         }
         
-        var h1 = new Human('홍길동', 12);
+        Human.prototype.showMe = function() {
+                console.log('My name is ' + this.name + ', age is' + this.age);
+            }
+
+
+        var h1 = new Human('홍길동', 12); //new를 안쓰면 메소드 호출임
         var h2 = new Human('가나다', 14);
 
+        h1.hello();
+
+        h1.height = 180;
+
+        console.log(h1.height); //180
+        console.log(h2.height); //undefined
         var h3 = h1;
         h3.name = '우주선'; //h1의 값도 변경이 된다.
 

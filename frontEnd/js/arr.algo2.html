@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var myArr = {
+            arr: [2, 6, 10, 11, 22, 1, 7],        
+            forEach: function(cb) {
+            for (var i=0; i<this.arr.length; i++) {
+                var item = this.arr[i];
+                cb(item,i); 
+                }
+            }
+        };
+        myArr.forEach(function(item, idx){
+            console.log(idx + ' - item ' + item);
+        });
+        //익명함수를 가리키거나 사용하는 방법
+        
+    </script>
+</body>
+</html>
