@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum() { //받는 곳은 parameter
+            var sum=0; //초기화의 중요성
+            for(var i=0; i<arguments.length; i++) {
+                sum += arguments[i];
+            }
+            console.log('sum : ' + sum);
+            return sum;
+        }
+        sum(1,2,3,4); //주는 값은 argument (전부 다 배열로 들어감)
+        sum(1,2,3,'aaa',false);
+        var result = sum(1,2,3,4,5);
+        console.log(result);
+    </script>
+</body>
+</html>

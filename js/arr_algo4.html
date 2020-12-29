@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [99, 200, 2, 6, 10, 11, 22, 1, 7];
+        var arr2 = arr.filter(function(item) {
+            return item % 2 == 0;
+        });
+        console.log('arr : ' + arr);
+        console.log('arr2 : ' + arr2);
+
+        //배열을 만들자
+        //배열에다가 추가를 해야함
+        //push사용
+
+        var myArr = {
+            data : [99, 200, 2, 6, 10, 11, 22, 1, 7],
+            filter: function(callback) {
+                var temp = [];
+                    for(var i=0; i<this.data.length; i++) {
+                        var item = this.data[i];
+                        if(callback(item)){
+                            temp.push(item);
+                        }
+                    }                   
+                    return temp;
+            }
+        }
+
+        var arr3 = myArr.filter(function(item) {
+            return item % 2 == 0;
+        });
+        console.log('arr3 : ' + arr3);
+    </script>
+</body>
+</html>

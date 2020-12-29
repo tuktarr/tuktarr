@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var pro = new Promise(function(res, rej){ //객체화된 pro의 주소값
+            
+            // setTimeout(function(){
+            //     return 'ddd';
+            //     resolve(); 
+            // }, 3000);
+
+            //작업이 오래걸리는 함수를 잡음
+            setTimeout(function(){
+                res({'val' : 'ddd', 'val2' : 2}); //resolve 안에 인자에 값이 없다면 then 에 undefined가 뜬다
+                
+            }, 3000);
+
+        });
+
+        // var data = pro; // 'ddd'값을 받질 못함 (object promise)
+        // console.log('data' + data);
+
+        pro.then(function(data){
+            console.log('data : ' + data.val);
+            console.log('data2 : ' + data.val2);
+        }); //자바스크립트가 오래걸려서 쌩까고 지나는 작업을 프로미스를 사용하여 인위적으로 쓰게 만드는 환경으로 바꾸는 것
+
+    </script>
+</body>
+</html>

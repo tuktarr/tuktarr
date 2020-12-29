@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n1 = '10';
+        var n2 = '5';
+        
+        console.log(n1 + n2); //105 문자열합치기
+        console.log(n1 * n2); //50 ??? 둘 다 숫자형으로 바꿔봄 바꿔지면 //숫자로계산
+        console.log(n1 - n2); //뺄셈도 연산가능 
+        console.log(n1 / n2); //문자열 두 개를 써도 상관이 없음
+        console.log(n1 % '3'); //문자열 두 개를 써도 상관이 없음
+
+        console.log('10' * '3a'); //NaN (Not a Number)
+        // 더하기였다면 103a가 찍혔을 것이다..
+        // Try - Catch 가 안잡힌다. -> NaN도 결국 숫자이다 (에러가 아님)
+    </script>
+</body>
+</html>
