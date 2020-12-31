@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="tx1" type="text">
+    <button id="btn">체크</button>
+    <script>
+        var ele = window.tx1;
+        var btn = document.querySelector('#btn');
+        //var btn을 굳이 안하더라도 밑에 있는 함수는 작동한다
+        //그렇지만 옛 브라우저버전에서는 작동하지 않을 수 있고
+        //오류를 최대한 방지하자는 마음가짐으로 선언을 해놓는다
+        btn.onclick = function(e) {
+            chkTxt(e,111);
+        }; //onclick을 실행해준다는 의미
+        //onclick은 한 개체랑만 연결된다.
+        
+
+        function chkTxt(e,val) {
+            console.log(ele.value + ', ' + e.target.id + ', ' + val);
+        }
+    </script>
+</body>
+</html>

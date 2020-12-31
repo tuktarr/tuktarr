@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calc(n1,n2) {
+            var p = new Promise(function(resolve, reject){
+                var result = n1/n2;
+
+                if(result == Infinity) { //문제 발생
+                    reject('문제 발생');
+                } else{ //문제가 안 생김
+                    resolve(result);
+                }
+            });
+            return p;
+        }
+
+        calc(10,2).then(function(result){
+            console.log('result_1 : ' + result);
+        }).catch(function(result){
+            console.log('catch_result_1 : ' + result);
+        }).then(function() {
+            console.log('1 마지막 then 호출')
+        });
+
+        calc(10,0).then(function(result){
+            console.log('result_2 : ' + result);
+        }).catch(function(result){
+            console.log('catch_result_2 : ' + result);
+        }).then(function() {
+            console.log('2 마지막 then 호출')
+        });
+    </script>
+</body>
+</html>

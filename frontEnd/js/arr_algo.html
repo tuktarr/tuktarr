@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [2, 6, 10, 11, 22, 1, 7];
+        for (var i=0; i<arr.length; i++) {
+            console.log(arr[i]);
+        }
+        
+        console.log('=============================')
+
+        arr.forEach(function(item){ //forEach문 내부에서 for문이 돌면서 무한 호출
+            console.log(item);
+        });
+        
+        var sum = 0;
+        arr.forEach(function(item, idx){
+            sum += item;
+            console.log(idx + ' - item ' + item);
+        });
+        console.log('sum : ' + sum);
+    </script>
+</body>
+</html>

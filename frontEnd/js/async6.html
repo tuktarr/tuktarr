@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function printA() {
+            return new Promise(
+                function(resolve){
+                    setTimeout(function() {
+                        resolve(450);
+                    }, 3000);
+                }
+            );
+        }
+
+        function printB(val) {
+            return new Promise(
+                function(resolve) {
+                    setTimeout(function() { 
+                        resolve(val*2);
+                    }, 2000);
+                }
+            );
+        }
+        
+        function printC(val) {
+
+            var fn = function(resolve) {
+                setTimeout(function() {
+                    resolve(val + 100);
+                }, 1000);
+            }
+            return new Promise(fn);
+        }
+        printA().then(function(itemA){
+            console.log('itemA : ' + itemA);
+            return printB(itemA);
+        }).then(function(itemB){
+            console.log('itemB : ' + itemB);
+            return printC(itemB);
+        }).then(function(itemC){
+            console.log('itemC : ' + itemC);
+        });
+
+        async function proc() {
+            var itemA = await printA();
+            console.log('itemA : ' + itemA);
+
+            var itemB = await printB(itemA);
+            console.log('itemB : ' + itemB);
+
+            var itemC = await printC(itemB);
+            console.log('itemC : ' + itemC);
+        } //await 키워드를 쓰려면 async 키워드로 만들어진 함수 안에서만 사용이 가능함
+        
+        proc();
+
+    </script>
+</body>
+</html>

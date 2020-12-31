@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function printA() {
+            return new Promise(
+                function(resolve){
+                    setTimeout(function() {
+                        resolve(450);
+                    }, 3000); //오래걸리는 작업 적음
+                }
+            );
+        }
+        //2초 후에 var * 2를 리턴하는 함수
+        function printB(val) {
+            return new Promise(
+                function(resolve) {
+                    setTimeout(function() { 
+                        resolve(val*2);
+                    }, 2000);
+                }
+            );
+        }
+
+        function printC(val) {
+
+            var fn = function(resolve) {
+                setTimeout(function() {
+                    resolve(val + 100);
+                }, 1000);
+            }
+            return new Promise(fn);
+        }
+        
+        var pA = printA();
+        pA.then(function(itemA) {
+            console.log('itemA : ' + itemA);
+
+            printB(itemA).then(function(itemB) {
+                console.log('itemB : ' + itemB);
+               
+               printC(itemB).then(function(itemC){
+                   console.log('itemC : ' + itemC);
+               })
+            });
+        });
+    </script>
+</body>
+</html>

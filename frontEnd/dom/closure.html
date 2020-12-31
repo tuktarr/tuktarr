@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn() {
+            var i = 0; //지역변수는 fn()안에서 살아있다
+            //벗어나는 순간 죽어버린다.
+            return {
+                upCnt: function(){
+                    i++;
+                },
+                printCnt: function(){
+                    console.log(i);
+                }
+            };
+        }
+
+        var fn1 = fn();
+        var fn2 = fn();
+
+        fn1.upCnt();
+        fn1.upCnt();
+
+        fn1.printCnt();
+        fn2.printCnt();
+        //리턴을 사용하면 죽어야 하는 'i'는 좀비처럼 살아 있다(Closure)
+    </script> 
+</body>
+</html>

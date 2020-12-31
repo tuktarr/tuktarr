@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn1(item) {
+            console.log('fn1 : ' + item);
+        } //함수를 정의
+
+        function fn2(item) {
+            console.log('fn2 : ' + item);
+        }
+        fn1(1); //함수를 호출하는 것
+        //fn1(); //값을 안 넣어서 undefined
+        //fn1(ddd); //ddd is not defined -> ddd선언만 하면 사용가능
+        function proc(cb) {
+            cb(1); //cb는 들어온 인자(함수)의 값을 가리키고
+            cb(2);
+            fn1(3); //하드코딩되어 있어서 fn1을 계속 가리키고 있다.
+        }
+        proc(fn2);
+
+        function proc(cb) {
+            for(var i = 0; i<4; i++) {
+                cb(i);
+            }
+        }
+        proc(function(item){
+            console.log('noName : ' + item)
+        }) //연결창구인 인자이름이 없다 뿐이지 proc()함수에서 익명함수를 만들어 사용한 것
+
+        proc(fn2);
+    </script>
+</body>
+</html>

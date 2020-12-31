@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function calc(n1,n2) {
+        var p = new Promise(function(resolve, reject){
+            var result = n1/n2;
+
+            if(result == Infinity) { //문제 발생
+                reject('문제 발생');
+            } else{ //문제가 안 생김
+                resolve(result);
+            }
+        });
+        return p;
+    }
+
+    async function proc() { 
+        try {
+            var result = await calc(10,0);
+            console.log('result_1 : ' + result);
+        } catch(e) {
+            console.log('catch_result_1 : ' + e);
+        } finally {
+            console.log('finally_1 : ');
+        }
+    }
+    proc();
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [99, 200, 2, 6, 10, 11, 22, 1, 7];
+        var arr2 = arr.map(function(item){
+            return item * 2;
+        });
+        // 새로운 객체를 만드는 행위 (map)
+
+        console.log('arr : ' + arr);
+        console.log('arr2 : ' + arr2);
+        console.log('-----------------');
+        var myArr = {
+            arr: [99, 200, 2, 6, 10, 11, 22, 1, 7],
+            map : function(fn) {
+                var temp = [];
+                for(var i=0;i<this.arr.length;i++){
+                    temp[i] = fn(this.arr[i]);
+                }
+                return temp;
+            }
+        }
+        
+        var arr3 = myArr.map(function(item){
+            return item * 2;
+        })
+        console.log('myArr : ' + myArr.arr);
+        console.log('arr3 : ' + arr3);
+    </script>
+    
+</body>
+</html>

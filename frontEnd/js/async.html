@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function printA() {
+        //     setTimeout(function() { //내장함수(setTimeout)
+        //         console.log('--prirntA called');
+        //         printB();
+        //     }, 3000);
+        // } //3000ms -> 3초
+        // function printB() {
+        //     setTimeout(function() { 
+        //         console.log('--prirntB called');
+        //         printC();
+        //     }, 2000);
+        // }
+        // function printC() {
+        //     setTimeout(function() { 
+        //         console.log('--prirntC called');
+        //     }, 1000);
+        // }
+        //처리하는데 오래 걸린다고 판단하는 것들은 바로 처리하지 않고 나중에 처리함
+        // printA(); //재활용성이 엄청나게 떨어지는 문제점 발생
+        // printB();
+        // printC(); // C B A 순서로 처리함
+    </script>
+</body>
+</html>
