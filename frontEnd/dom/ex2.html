@@ -44,6 +44,7 @@
             var tr = document.createElement('tr');
             for(var j=0; j<20; j++){
                 var td = document.createElement('td');
+                td.setAttribute('class','tdAll');
                 td.onclick = function(e) {
                     console.log('ddd');
                     // e.target.stlye.backgrouncolor = e.target.stlye.backgrouncolor ? '' : ipColor.value;
@@ -61,7 +62,10 @@
         }
 
         btnClear.onclick = function(e) {
-            
+           var tdAll = document.querySelectorAll('.tdAll');
+           for(var i=0; i<tdAll.length; i++){
+               tdAll[i].style.backgroundColor = '';
+           }
         }
         cont.append(table);
         //e.target -> 이벤트의 대상 !!!
