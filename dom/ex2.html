@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%)           ;
+        }
+        table, td{
+            border: 1px solid rgb(224, 223, 223);
+            border-collapse: collapse;
+        }
+        td{
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        var cont = document.querySelector('#container');
+        var ipColor = document.createElement('input');
+        var btnClear = document.createElement('input');
+        btnClear.setAttribute('type', 'button');
+        btnClear.setAttribute('value', 'Clear');
+        // btnClear.value = Clear;
+        // btnClear.setAttribute('ddddd','gggggg') //특정 element에 값을 부여
+        //set은 교체를 의미함
+        ipColor.type='color';
+        ipColor.value='#46649B';
+        //<input type="color" value="#FFFFFF"> 위에 3줄을 이런식처럼 같게 쓴거임
+        cont.append(ipColor); //맨 뒤에 요소를 추가
+        cont.append(btnClear);
+        //prepend -> 맨 앞에 요소를 추가
+
+        var table = document.createElement('table');
+        for(var i=0; i<20; i++){           
+            var tr = document.createElement('tr');
+            for(var j=0; j<20; j++){
+                var td = document.createElement('td');
+                td.setAttribute('class','tdAll');
+                td.onclick = function(e) {
+                    console.log('ddd');
+                    // e.target.stlye.backgrouncolor = e.target.stlye.backgrouncolor ? '' : ipColor.value;
+                    if(e.target.style.backgroundColor){ //이 당시는 null 따라서 false 상태임 -> 바로 else로 감
+                        e.target.style.backgroundColor= ''; //빈칸으로 만듦
+                    } else { //false일 때 오는 경우
+                        e.target.style.backgroundColor = ipColor.value;
+                        //색깔이 있다면 문자열로 보기 때문에 true로 본다.
+                    }
+                    
+                };
+                tr.append(td);
+            }
+            table.append(tr);
+        }
+
+        btnClear.onclick = function(e) {
+           var tdAll = document.querySelectorAll('.tdAll');
+           for(var i=0; i<tdAll.length; i++){
+               tdAll[i].style.backgroundColor = '';
+           }
+        }
+        cont.append(table);
+        //e.target -> 이벤트의 대상 !!!
+        </script>
+</body>
+</html>

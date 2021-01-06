@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn1() { 
+            return privateCalc(10,20);
+
+            function privateCalc(n1, n2) { //함수는 상위로 올라감 
+                return n1 + n2;
+            }
+        }
+
+        console.log(fn1());
+
+        function fn2() {
+            if(1) { //함수단위라서 fn2가 변수선언 10을 받는다
+                var a = 10; //let(변수) a = 10; 하면 undefined가 나옴
+            }
+            console.log(a);
+        }
+        fn2();
+    </script>
+</body>
+</html>

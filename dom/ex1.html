@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="number" id="num1">
+        <input type="number" id="num2">
+        <input id="result" readonly>
+        <button id="cool">더하기</button>
+        <script>
+            var btn1 = document.querySelector('#num1');
+            var btn2 = document.querySelector('#num2');
+            var result = document.querySelector('#result');
+            var cool = document.querySelector('#cool');
+            cool.onclick = function(e) {
+                var btnValue1 = btn1.value;
+                var btnValue2 = btn2.value;
+                result.value = parseInt(btnValue1) + parseInt(btnValue2);
+                console.log(result.value);
+            };
+            // parseInt -> 문자열이 섞여있으면 문자열 바로 앞까지 숫자로 나타냄
+            // number -> 문자열이 섞여있으면 NaN로 나옴
+            // html에 쓰여진 숫자들은 결국 문자열임
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="tx1" type="text">
+    <button id="btn">체크</button>
+    <script>
+        var ele = window.tx1;
+        var btn = document.querySelector('#btn');
+        btn.addEventListener('click', ddd);
+        btn.addEventListener('click', secFn);
+        btn.onclick = threeFn;
+        btn.onclick = null;
+
+        // btn.removeEventListener('click', ddd);
+        // btn.removeEventListener('click', secFn);
+
+        function ddd(e) {
+            chkTxt(e,101010);
+        }
+        function chkTxt(e, val) { 
+            console.log(ele.value + ', ' + e.target.id + ', ' + val);
+        }
+
+        function secFn(e) {
+            console.log('hahaha');
+        }
+
+        function threeFn(e) {
+            console.log('threeFn');
+        }
+    </script>
+</body>
+</html>
